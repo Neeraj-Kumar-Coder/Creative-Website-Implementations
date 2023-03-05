@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+:root {
+    --checkbox-height: 200px;
+    --checkbox-width: 400px;
+    --smiley-offset: 5px;
+    --eye-size: 30px;
+    --danger-color: #FF0000;
+    --success-color: #39FF14;
+    --delay: 150ms;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.input-label>input {
+    display: none;
+}
+
+.input-label>input:checked~span {
+    background-color: var(--success-color);
+    box-shadow: 0px 15px 50px var(--success-color);
+}
+
+.input-label>span {
+    display: inline-block;
+    width: var(--checkbox-width);
+    height: var(--checkbox-height);
+    background-color: var(--danger-color);
+    border-radius: calc(var(--checkbox-height) / 2);
+    box-shadow: 0px 15px 50px var(--danger-color);
+    cursor: pointer;
+    transition: all var(--delay) linear;
+}
+
+.input-label>span>i {
+    display: inline-block;
+    position: relative;
+    top: var(--smiley-offset);
+    left: var(--smiley-offset);
+    z-index: 2;
+    border-radius: 50%;
+    height: calc(var(--checkbox-height) - 10px);
+    width: calc(var(--checkbox-height) - 10px);
+    background-color: white;
+    transition: all var(--delay) linear;
+}
+
+.input-label>input:checked~span>i {
+    left: calc(var(--checkbox-width) - var(--checkbox-height) + var(--smiley-offset));
+}
+
+.input-label>span>i::before {
+    content: "";
+    position: absolute;
+    height: var(--eye-size);
+    width: var(--eye-size);
+    background-color: var(--danger-color);
+    top: calc((var(--checkbox-height) - (var(--eye-size) / 2)) / 4);
+    left: calc((var(--checkbox-height) - (var(--eye-size) / 2)) / 5);
+    border-radius: 50%;
+    box-shadow: calc((4 * (var(--checkbox-height) - (var(--eye-size) / 2))) / 5 - 60px) 0 var(--danger-color);
+    transition: all var(--delay) linear;
+}
+
+.input-label>span>i::after {
+    content: "";
+    position: absolute;
+    height: calc(var(--eye-size) / 2);
+    width: 95px;
+    bottom: 50px;
+    left: calc(((var(--checkbox-height) - 10px) / 5) + 10px);
+    background-color: var(--danger-color);
+    transition: all var(--delay) linear;
+}
+
+.input-label>input:checked~span>i::before {
+    background-color: var(--success-color);
+    box-shadow: calc((4 * (var(--checkbox-height) - (var(--eye-size) / 2))) / 5 - 60px) 0 var(--success-color);
+}
+
+.input-label>input:checked~span>i::after {
+    bottom: 35px;
+    height: 40px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    background-color: var(--success-color);
+}
