@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 100vh;
+    background: #333333;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    height: 150px;
+}
+
+footer>h3 {
+    position: relative;
+    z-index: 1001;
+    color: white;
+}
+
+footer .waves .wave {
+    position: absolute;
+    bottom: 0;
+    height: 200px;
+    width: 100%;
+    background: url("./images/wave.png");
+    background-size: cover;
+}
+
+footer .waves .wave#wave1 {
+    animation: wave_forward 14s linear 0s infinite forwards;
+    z-index: 1000;
+    opacity: 1;
+}
+
+footer .waves .wave#wave2 {
+    animation: wave_backward 12s linear 0s infinite forwards;
+    z-index: 999;
+    opacity: 0.7;
+}
+
+footer .waves .wave#wave3 {
+    animation: wave_forward 10s linear 0s infinite forwards;
+    z-index: 998;
+    opacity: 0.5;
+}
+
+footer .waves .wave#wave4 {
+    animation: wave_backward 8s linear 0s infinite forwards;
+    z-index: 997;
+    opacity: 0.3;
+}
+
+@keyframes wave_forward {
+
+    0%,
+    100% {
+        background-position-x: 0;
+    }
+
+    50% {
+        background-position-x: 100svw;
+    }
+}
+
+@keyframes wave_backward {
+
+    0%,
+    100% {
+        background-position-x: 0;
+    }
+
+    50% {
+        background-position-x: -100svw;
+    }
+}
