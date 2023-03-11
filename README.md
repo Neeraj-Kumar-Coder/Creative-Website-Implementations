@@ -1,5 +1,5 @@
 # Creative Website Implementations
-These designs should be implemented for logic reference and NOT to be used as a template.
+These designs are implemented for logic reference and NOT to be used as a template.
 
 ### Here is the list of implementations:
 
