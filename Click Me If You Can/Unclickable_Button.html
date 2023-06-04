@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform 3D</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            perspective: 700px;
+        }
+
+        #btn {
+            display: inline-block;
+            position: relative;
+            padding: 1rem 2rem;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 1.5rem;
+            outline: none;
+            background: #252324;
+            color: white;
+            cursor: pointer;
+            transition: all 300ms ease-out;
+            transform-style: preserve-3d;
+        }
+
+        #shadow {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: black;
+            filter: blur(10px);
+            opacity: 0.3;
+            transform: translateZ(-100px);
+        }
+
+        #btn-side-1 {
+            position: absolute;
+            top: -8%;
+            bottom: 89%;
+            left: 0;
+            right: 0;
+            background: black;
+            border-radius: 2px;
+            transform: rotateX(90deg) translateY(-50%);
+        }
+
+        #btn-side-2 {
+            position: absolute;
+            top: 89%;
+            bottom: -8%;
+            left: 0;
+            right: 0;
+            background: black;
+            border-radius: 2px;
+            transform: rotateX(90deg) translateY(-50%);
+        }
+
+        #btn-side-3 {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 96%;
+            right: -3.5%;
+            background: black;
+            border-radius: 2px;
+            transform: rotateY(90deg) translateX(50%);
+        }
+
+        #btn-side-4 {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -3.5%;
+            right: 96%;
+            background: black;
+            border-radius: 2px;
+            transform: rotateY(90deg) translateX(50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <span id="btn">
+            Click Me
+            <span id="shadow"></span>
+            <span id="btn-side-1"></span>
+            <span id="btn-side-2"></span>
+            <span id="btn-side-3"></span>
+            <span id="btn-side-4"></span>
+        </span>
+    </div>
+
+    <script>
+        const button = document.getElementById("btn");
+        const buttonRect = button.getBoundingClientRect();
+
+        const originalButtonCenterX = buttonRect.left + button.offsetWidth / 2;
+        const originalButtonCenterY = buttonRect.top + button.offsetHeight / 2;
+
+        document.addEventListener("mousemove", (event) => {
+            const mouseX = event.clientX;
+            const mouseY = event.clientY;
+
+            const diffX = mouseX - originalButtonCenterX;
+            const diffY = mouseY - originalButtonCenterY;
+
+            const distance = Math.sqrt(diffX * diffX + diffY * diffY);
+
+            if (distance <= 300) {
+                if (originalButtonCenterX - mouseX >= 0)
+                    button.style.transform = `translate3d(${150 * Math.tanh(100 / (originalButtonCenterX - mouseX))}px, ${150 * Math.tanh(100 / (originalButtonCenterY - mouseY))}px, 0px) rotate3d(${150 * Math.tanh(100 / (originalButtonCenterY - mouseY))}, ${-150 * Math.tanh(100 / (originalButtonCenterX - mouseX))}, 0, 60deg)`;
+                else
+                    button.style.transform = `translate3d(${150 * Math.tanh(100 / (originalButtonCenterX - mouseX))}px, ${150 * Math.tanh(100 / (originalButtonCenterY - mouseY))}px, 0px) rotate3d(${150 * Math.tanh(100 / (originalButtonCenterY - mouseY))}, ${-150 * Math.tanh(100 / (originalButtonCenterX - mouseX))}, 0, 60deg)`;
+            }
+            else {
+                button.style.transform = "";
+            }
+        });
+    </script>
+</body>
+
+</html>
