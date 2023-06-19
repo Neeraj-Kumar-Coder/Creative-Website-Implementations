@@ -16,3 +16,5 @@ These designs are implemented for logic reference and NOT to be used as a templa
 1. [Turkish Ice-cream man form](<Click Me If You Can>)
 
 1. [Futuristic Button](<Futuristic Button>)
+
+1. [Artistic Buttons](<Artistic Buttons>)

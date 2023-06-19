@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 100vh;
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
+}
+
+h1 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 2;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    transform: translateX(-50%);
+    font-size: 5rem;
+    text-transform: capitalize;
+}
+
+.twister-button {
+    width: 300px;
+    height: 100px;
+    font-size: 2rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-image: linear-gradient(to right, #8e2de2, #4a00e0);
+    cursor: pointer;
+
+    position: relative;
+}
+
+#screw-corner-1,
+#grow-corner-1,
+#flash-corner-1 {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    border-right: 5px solid lightblue;
+    border-bottom: 5px solid lightblue;
+}
+
+#screw-corner-2,
+#grow-corner-2,
+#flash-corner-2 {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: -5px;
+    right: -6px;
+    border-left: 5px solid lightblue;
+    border-bottom: 5px solid lightblue;
+}
+
+#screw-corner-3,
+#grow-corner-3,
+#flash-corner-3 {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: -6px;
+    left: -5px;
+    border-right: 5px solid lightblue;
+    border-top: 5px solid lightblue;
+}
+
+#screw-corner-4,
+#grow-corner-4,
+#flash-corner-4 {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: -6px;
+    bottom: -6px;
+    border-left: 5px solid lightblue;
+    border-top: 5px solid lightblue;
+}
+
+#screw-corner-1,
+#screw-corner-2,
+#screw-corner-3,
+#screw-corner-4 {
+    transition: all 150ms linear calc(var(--i) * 150ms);
+}
+
+#flash-corner-1,
+#flash-corner-2,
+#flash-corner-3,
+#flash-corner-4 {
+    transition: all 150ms linear calc(var(--i) * 150ms);
+}
+
+#grow-corner-1,
+#grow-corner-4 {
+    transition: width 150ms linear 150ms, height 150ms linear 150ms, transform 150ms linear 300ms;
+}
+
+#grow-corner-2,
+#grow-corner-3 {
+    transition: all 150ms linear 450ms;
+}
+
+.twister-button:hover #screw-corner-1 {
+    transform: rotate(180deg);
+}
+
+.twister-button:hover #screw-corner-2 {
+    transform: rotate(-180deg);
+}
+
+.twister-button:hover #screw-corner-3 {
+    transform: rotate(-180deg);
+}
+
+.twister-button:hover #screw-corner-4 {
+    transform: rotate(180deg);
+}
+
+.twister-button:hover #flash-corner-1 {
+    transform: translate(278px, 78px);
+}
+
+.twister-button:hover #flash-corner-2 {
+    transform: translate(-278px, 78px);
+}
+
+.twister-button:hover #flash-corner-3 {
+    transform: translate(278px, -78px);
+}
+
+.twister-button:hover #flash-corner-4 {
+    transform: translate(-278px, -78px);
+}
+
+.twister-button:hover #grow-corner-1 {
+    transform: translate(2.8px, 3.6px);
+    width: 303px;
+    height: 103px;
+}
+
+.twister-button:hover #grow-corner-2 {
+    transform: translate(30px, -30px);
+}
+
+.twister-button:hover #grow-corner-3 {
+    transform: translate(-30px, 30px);
+}
+
+.twister-button:hover #grow-corner-4 {
+    transform: translate(-2.8px, -3.6px);
+    width: 303px;
+    height: 103px;
+}
