@@ -12,3 +12,7 @@ These designs are implemented for logic reference and NOT to be used as a templa
 1. [3D Glowing Cube](3D%20Glowing%20Cube)
 
 1. [Flowing Wave Footer](Wave%20Footer)
+
+1. [Turkish Ice-cream man form](<Click Me If You Can>)
+
+1. [Futuristic Button](<Futuristic Button>)
