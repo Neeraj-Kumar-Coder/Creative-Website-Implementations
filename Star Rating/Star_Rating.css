@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.container>label {
+    font-size: 5rem;
+    cursor: pointer;
+    transition: color 150ms linear;
+    padding: 0.5rem;
+}
+
+.container>input {
+    display: none;
+}
+
+#star-1:hover {
+    color: gold;
+}
+
+#star-2:hover {
+    color: gold;
+
+    ~#star-1 {
+        color: gold;
+    }
+}
+
+#star-3:hover {
+    color: gold;
+
+    ~#star-1 {
+        color: gold;
+    }
+
+    ~#star-2 {
+        color: gold;
+    }
+}
+
+#star-4:hover {
+    color: gold;
+
+    ~#star-1 {
+        color: gold;
+    }
+
+    ~#star-2 {
+        color: gold;
+    }
+
+    ~#star-3 {
+        color: gold;
+    }
+}
+
+#star-5:hover {
+    color: gold;
+
+    ~#star-1 {
+        color: gold;
+    }
+
+    ~#star-2 {
+        color: gold;
+    }
+
+    ~#star-3 {
+        color: gold;
+    }
+
+    ~#star-4 {
+        color: gold;
+    }
+}
+
+#star-helper-1:checked~* {
+    color: gold;
+}
+
+#star-helper-2:checked~* {
+    color: gold;
+}
+
+#star-helper-3:checked~* {
+    color: gold;
+}
+
+#star-helper-4:checked~* {
+    color: gold;
+}
+
+#star-helper-5:checked~* {
+    color: gold;
+}

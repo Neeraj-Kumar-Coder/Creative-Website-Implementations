@@ -18,3 +18,5 @@ These designs are implemented for logic reference and NOT to be used as a templa
 1. [Futuristic Button](<Futuristic Button>)
 
 1. [Artistic Buttons](<Artistic Buttons>)
+
+1. [Star Rating - CSS Only (Useful logic)](<Star Rating>)
